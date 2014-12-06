@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+var debug = require('debug')('Gamev2');
+var app = require('../app');
+
+var server = app.server.listen(app.app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
+});

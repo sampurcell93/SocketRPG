@@ -1,0 +1,143 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+$mapwidth: 950px;
+
+@mixin no-user-select() {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+body {
+    background: #fff;
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: $mapwidth;
+    position: relative;
+    margin: 0 auto;
+}
+
+canvas#game-canvas {
+    display: block;
+    outline: 1px solid #000;
+    margin: 40px 0 0 0;
+}
+
+.game-console {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    border-top: 1px solid #777;
+    color: #ccc;
+    padding: 1px 4px;
+    font-size: .8em;
+    @include transition(height .3s ease-in-out);
+    @include no-user-select();
+
+    ol {
+        @include transition(height .3s ease-in-out);
+        overflow: auto;
+        list-style: decimal;
+        height: 60px;   
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 20px;
+    }
+
+    li {
+        @include border-radius(2px);
+        margin: 3px 5px;
+        padding: 1px 3px;
+        background: rgba(0,0,0,.3);
+        border-top: 1px solid #333;
+
+        &:empty {
+            visibility: hidden;
+            height: 0;
+            overflow: hidden;
+            border: none;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+        }
+    }
+
+    .button {
+        @include transition(top .3s ease-in-out);
+        position: absolute;
+        right: 10px;
+        top: 3px;
+        color: #fff;
+        text-shadow: 0px 1px 3px #222;
+    }
+
+    &.hidden { 
+        height: 0;
+        overflow: visible;
+
+        ol {
+            height: 0;
+            overflow: hidden;
+        }
+        .button {
+            top: -25px;
+        }
+    }
+}
+
+.mapmaker-grid {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: $mapwidth;
+
+    li {
+        vertical-align: top;
+        outline: 1px solid black;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        display: inline-block;
+        span {
+            display: block;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+        }
+    }
+}
+
+.ui-selected {
+    background: rgba(0,0,0,.4);
+}
+
+.ui-selecting {
+    background: rgba(0,0,0,.2);
+}
+
+#tile-editor {
+    @include border-radius(3px);
+    display: none;
+    position: absolute;
+    bottom: -55px;
+    width: 90%;
+    z-index: 99;
+    background: #fff;
+    padding: 20px;
+    margin: 0 5%;
+}

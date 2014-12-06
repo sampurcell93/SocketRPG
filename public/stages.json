@@ -1,0 +1,9 @@
+{
+    "MapPath": "maps",
+    "stages": {
+            "Home": {
+                "width": 4,
+                "height": 2
+            }
+        }
+}

@@ -1,0 +1,114 @@
+[
+ {
+    "name": "Tattered Cloak",
+    "weight": 1,
+    "slot": "neck",
+    "modifiers": [
+        {"prop": "AC", "mod": 1}
+    ],
+    "canUse": false,
+    "canEquip": true
+ },
+ {
+    "name": "Phoenix Down",
+    "weight": 1
+ },
+ {
+    "name": "Bread",
+    "weight": 1,
+    "modifiers": [
+        {"prop": "HP", "mod": 1}
+    ]
+ },
+ {
+    "name": "Rusted Knife",
+    "weight": 0.5,
+    "slot": "hands",
+    "canUse": false,
+    "canEquip": true,
+    "modifiers": [
+        {"prop": "atk", "mod": 1}
+    ]
+ }, 
+ {
+    "name": "Rusted Sword",
+    "weight": 1.4,
+    "canUse": false,
+    "canEquip": true,
+    "slot": "hands",
+    "modifiers": [
+        {"prop": "atk", "mod": 2}
+    ]
+ }, 
+ {
+    "name": "Iron Dagger",
+    "weight": 0.7,
+    "canUse": false,
+    "canEquip": true,
+    "slot": "hands",
+    "modifiers": [
+        {"prop": "atk", "mod": 1}
+    ]
+ }, 
+ {
+    "name": "Wooden Bow",
+    "weight": 1.3,
+    "slot": "hands",
+    "canUse": false,
+    "canEquip": true,
+    "modifiers": [
+        {"prop": "atk", "mod": 1},
+        {"prop": "range", "mod": 2}
+    ]
+ },
+ {
+    "name": "Iron Lance",
+    "weight": 3,
+    "canUse": false,
+    "canEquip": true,
+    "slot": "hands",
+    "modifiers": [
+        {"prop": "atk", "mod": 2},
+        {"prop": "AC", "mod": 1},
+        {"prop": "range", "mod": 1}
+    ]
+ }, 
+ {
+    "name": "Wood Staff",
+    "weight": 1,
+    "slot": "hands",
+    "canUse": false,
+    "canEquip": true,
+    "modifiers": [
+        {"prop": "atk", "mod": 0.5}
+    ]
+ }, 
+ {
+    "name": "Charming Silks",
+    "weight": 0.4,
+    "slot": "armor",
+    "canUse": false,
+    "canEquip": true,
+    "modifiers": [
+        {"prop": "cha", "mod": 1}
+    ]
+ }, 
+ {
+    "name": "Hoe",
+    "weight": 1,
+    "canUse": false,
+    "slot": "hands",
+    "canEquip": true,
+    "modifiers": [
+        {"prop": "atk", "mod": 1}
+    ]
+ },
+ {
+    "name": "Ink",
+    "weight": 0.3
+ }, 
+ {
+    "name": "Paper",
+    "weight": 0.1
+ }
+]

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  #wrapper 
+    #tile-editor        
+        .save-map Save All Tiles
+    canvas#game-canvas(tabindex='0', width='950', height='700')
+    ul.mapmaker-grid
+    div.game-console
+        .button.js-toggle Toggle
+        ol
+    script(type='text/template')#grid-item
+        span.difficulty  <%= difficulty %>
+        span.elevation  <%= elevation %>
+        span.passable <%= passable %>
+
+    script(type='text/template')#single-tile-editor-template
+        | Difficulty:
+        <input class='val-difficulty' type='text' value='<%= difficulty %>' placeholder='Diff'/>
+        | Elevation
+        <input class='val-elevation' type='text' value='<%= elevation %>' placeholder='Elv'/>
+        | Actor passable?
+        <input class='val-passable' type='text' value='<%= passable %>' placeholder='Pass?'/>
+        button.js-save-map Save Tile
+
+    script(type='text/template')#group-tile-editor-template
+        | Difficulty:
+        <input class='val-difficulty' type='text' placeholder='Diff'/>
+        | Elevation
+        <input class='val-elevation' type='text' placeholder='Elv'/>
+        | Actor passable?
+        <input class='val-passable' type='text' placeholder='Pass?'/>
+        button.js-save-map Save <%= numtiles %> Tiles
