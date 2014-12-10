@@ -24,6 +24,7 @@ define ->
         initialize: ->
             @listenTo @collection, 
                 "add": @emit
+            @hide()
         trimOldMessages: ->
             if @collection.length > @msgLen
                 diff = @collection.length - @msgLen

@@ -307,7 +307,7 @@
     },
     {
         "size": 50,
-        "passable": false,
+        "passable": true,
         "difficulty": 1,
         "elevation": 0
     },

@@ -76,9 +76,10 @@
       Console.prototype.visible = true;
 
       Console.prototype.initialize = function() {
-        return this.listenTo(this.collection, {
+        this.listenTo(this.collection, {
           "add": this.emit
         });
+        return this.hide();
       };
 
       Console.prototype.trimOldMessages = function() {

@@ -96,7 +96,7 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
                     adjacencyList.push(a) if a?
                     a = c.getTile(rowCell + -i, colCell + i)
                     adjacencyList.push(a) if a?
-            adjacencyList
+            _.sortBy adjacencyList, (v) -> v.get("difficulty")
         # Pass in a row and a col to get the euclidean distance from this cell
         # If diagonal is true, it will count each diagonal as only one
         getDistanceFrom: (row, col, shortDiagonal = false) ->
@@ -110,37 +110,39 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
                 return dist - Math.min(yDist, xDist);
 
         # Run a BFS from a root node, defaults to actor's location
-        BFS: (lookingFor = (-> true), options = {}) ->
+        # lookingFor - the test to determine if a tile should be placed into the final set
+        # nextTest - test to determine if a tile should be searched through, even if 
+        # it won't be in the final set
+        # Options - see getPathOptions
+        BFS: (lookingFor = (-> true), nextTest = (-> true), options = {}) ->
             maxDistance = 0;
             start = @
+            start.distanceFromRoot = 0
             options = _.extend(getPathOptions(), options)
             {rowCell, colCell} = start.getCellIndices()
             queue = [start]
             discoveryTable = {} 
-            discoveryTable[start.cid] = true
-            start.distanceFromRoot = 0
-            # The set of tiles that will be returned, in order of ascending distance from root
+            progenitors = {}
             finalSet = []
+            discoveryTable[start.cid] = true
+
+            # The set of tiles that will be returned, in order of ascending distance from root
             while queue.length 
                 tile = queue.shift()
-                if (tile isnt start)
+                if (tile isnt start and lookingFor(tile, progenitors[tile.cid]) is true)
                     finalSet.push(tile)
-                if options.returnOnFirst is true then break;
+                    if options.returnOnFirst is true then break;
                 _.each tile.getAdjacencyList(options.diagonal), (t) ->
-                    dist = tile.distanceFromRoot + t.get("difficulty")
                     r = t.getCellIndices()
-                    c = tile.getCellIndices()
-                    if !_.has(discoveryTable, t.cid) and dist  <= options.range
-                        if lookingFor(t, tile) is true
-                            console.log("progenitor is at " + c.rowCell + ", " + c.colCell + " with dist " + tile.distanceFromRoot)
-                            console.log(dist, r.rowCell, r.colCell)
-                            t.distanceFromRoot = dist
-                            t.progenitor = tile
-                            discoveryTable[t.cid] = true;
-                            queue.push(t)
-
-                        
-            console.log(finalSet.length)
+                    dist = tile.distanceFromRoot + t.get("difficulty")
+                    progenitors[t.cid] = tile
+                    if (!_.has(discoveryTable, t.cid) and 
+                    dist <= options.range and
+                    (nextTest(t, progenitors[t.cid]) is true or
+                    lookingFor(t, progenitors[t.cid] is true)))
+                        t.distanceFromRoot = dist
+                        discoveryTable[t.cid] = true;
+                        queue.push(t)
             return finalSet
 
 

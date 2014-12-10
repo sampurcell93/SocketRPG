@@ -36,18 +36,20 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jquer
                         tiler.renderTiles()
                         spawner = actors.getSpawner()
                         actor = spawner.spawn()
+                        actor2 = spawner.spawn()
                         objectrenderer.addObject(actor.marker, 0)
                         actors.setCurrentActor(actor);
                         actor.setCurrentTile(tiles.getTile(11,9), true)
+                        actor2.setCurrentTile(tiles.getTile(13,10), true)
+                        objectrenderer.addObject(actor2.marker, 0)
                         spawnerView = actors.getSpawnerView()
                         objectrenderer.addObject(spawnerView.marker, 0)    
                         cells = actor.currentTile.BFS(function(tile, progenitor) {
+                            console.log(tile.get("elevation"), tile.isPassableByActor(actor, progenitor))
+                            return tile.isOccupied()
+                        }, function(tile, progenitor) {
                             return tile.isPassableByActor(actor, progenitor)
                         }, {diagonal: false})
-                        // cells = actor.currentTile.BFS(function(tile) {
-                        //     return tile.get("elevation") > 2
-                        // }, {diagonal: true})
-
                         _.each(cells, function(cell) {
                             cell.trigger("highlight", "red")
                         });
@@ -56,11 +58,11 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jquer
                 }
 
                 hub.dispatcher.on("loaded:assets", initializeGame)
-                // var socket = io.connect('http://localhost');
-                // socket.on('news', function (data) {
-                //     console.log(data);
-                //     socket.emit('my other event', { my: 'data' });
-                // });
+                var socket = io.connect('http://localhost');
+                socket.on('news', function (data) {
+                    console.log(data);
+                    socket.emit('my other event', { my: 'data' });
+                });
             }
         )
     }

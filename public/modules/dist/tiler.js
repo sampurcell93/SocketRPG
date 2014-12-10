@@ -147,7 +147,9 @@
             }
           }
         }
-        return adjacencyList;
+        return _.sortBy(adjacencyList, function(v) {
+          return v.get("difficulty");
+        });
       };
 
       Tile.prototype.getDistanceFrom = function(row, col, shortDiagonal) {
@@ -166,10 +168,15 @@
         }
       };
 
-      Tile.prototype.BFS = function(lookingFor, options) {
-        var colCell, discoveryTable, finalSet, maxDistance, queue, rowCell, start, tile, _ref;
+      Tile.prototype.BFS = function(lookingFor, nextTest, options) {
+        var colCell, discoveryTable, finalSet, maxDistance, progenitors, queue, rowCell, start, tile, _ref;
         if (lookingFor == null) {
           lookingFor = (function() {
+            return true;
+          });
+        }
+        if (nextTest == null) {
+          nextTest = (function() {
             return true;
           });
         }
@@ -178,39 +185,34 @@
         }
         maxDistance = 0;
         start = this;
+        start.distanceFromRoot = 0;
         options = _.extend(getPathOptions(), options);
         _ref = start.getCellIndices(), rowCell = _ref.rowCell, colCell = _ref.colCell;
         queue = [start];
         discoveryTable = {};
-        discoveryTable[start.cid] = true;
-        start.distanceFromRoot = 0;
+        progenitors = {};
         finalSet = [];
+        discoveryTable[start.cid] = true;
         while (queue.length) {
           tile = queue.shift();
-          if (tile !== start) {
+          if (tile !== start && lookingFor(tile, progenitors[tile.cid]) === true) {
             finalSet.push(tile);
-          }
-          if (options.returnOnFirst === true) {
-            break;
+            if (options.returnOnFirst === true) {
+              break;
+            }
           }
           _.each(tile.getAdjacencyList(options.diagonal), function(t) {
-            var c, dist, r;
-            dist = tile.distanceFromRoot + t.get("difficulty");
+            var dist, r;
             r = t.getCellIndices();
-            c = tile.getCellIndices();
-            if (!_.has(discoveryTable, t.cid) && dist <= options.range) {
-              if (lookingFor(t, tile) === true) {
-                console.log("progenitor is at " + c.rowCell + ", " + c.colCell + " with dist " + tile.distanceFromRoot);
-                console.log(dist, r.rowCell, r.colCell);
-                t.distanceFromRoot = dist;
-                t.progenitor = tile;
-                discoveryTable[t.cid] = true;
-                return queue.push(t);
-              }
+            dist = tile.distanceFromRoot + t.get("difficulty");
+            progenitors[t.cid] = tile;
+            if (!_.has(discoveryTable, t.cid) && dist <= options.range && (nextTest(t, progenitors[t.cid]) === true || lookingFor(t, progenitors[t.cid] === true))) {
+              t.distanceFromRoot = dist;
+              discoveryTable[t.cid] = true;
+              return queue.push(t);
             }
           });
         }
-        console.log(finalSet.length);
         return finalSet;
       };
 
