@@ -50,7 +50,6 @@ define ["actor"], (actors) ->
 
         battling: (key) ->
         traveling: (key) ->
-
             # Only allow key presses when a player is active
             actor = actors.getCurrentActor()
             if actor?
@@ -60,6 +59,7 @@ define ["actor"], (actors) ->
                     when keys["DOWN"]  then actor.moveDown()
                     when keys["LEFT"]  then actor.moveLeft()
                     when keys["MAPMAKER"] then dispatcher.dispatch("toggle:mapmaker")
+                    when keys['BATTLE'] then dispatcher.dispatch("start:battle")
                     # when keys['SPACE'] then menus.toggleMenu()
             # else 
                 # console.log "you can't go now: a player character is NOT active. The active player is "

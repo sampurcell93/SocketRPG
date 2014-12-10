@@ -1,1864 +1,1598 @@
 [
     {
-        "0": "x",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "x",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "x",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "x",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
         "size": 50,
         "passable": true,
         "difficulty": 1,
-        "elevation": 0
+        "elevation": -1
     },
     {
-        "0": "x",
         "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "difficulty": 1,
-        "elevation": 3,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
+        "elevation": -1,
         "difficulty": 1,
         "passable": true
     },
     {
-        "0": "e",
         "size": 50,
-        "elevation": 3,
+        "elevation": -1,
         "difficulty": 1,
         "passable": true
     },
     {
-        "0": "x",
+        "size": 50,
+        "elevation": -1,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "x",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "x",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
         "size": 50,
         "difficulty": 1,
         "elevation": 0,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "difficulty": 1,
-        "elevation": 3,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "difficulty": 1,
-        "elevation": 3,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "difficulty": 1,
-        "elevation": 3,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "difficulty": 1,
-        "elevation": 3,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "difficulty": 1,
-        "elevation": 3,
-        "passable": true
-    },
-    {
-        "0": "x",
-        "size": 50,
-        "difficulty": 1,
-        "elevation": 3,
         "passable": false
     },
     {
-        "0": "x",
         "size": 50,
         "difficulty": 1,
         "elevation": 0,
         "passable": true
     },
     {
-        "0": "e",
         "size": 50,
-        "passable": true,
         "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
+        "elevation": 0,
         "passable": true
     },
     {
-        "0": "e",
         "size": 50,
-        "elevation": 3,
         "difficulty": 1,
+        "elevation": 0,
         "passable": true
     },
     {
-        "0": "e",
         "size": 50,
-        "elevation": 3,
         "difficulty": 1,
+        "elevation": 0,
         "passable": true
     },
     {
-        "0": "e",
         "size": 50,
-        "elevation": 3,
         "difficulty": 1,
-        "passable": true
+        "elevation": 0,
+        "passable": false
     },
     {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 3
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 3
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 3
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 3
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 3
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 3
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 3
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 2
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 1
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": false,
-        "difficulty": 1,
-        "elevation": 1
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
         "size": 50,
-        "passable": true,
+        "elevation": -2,
         "difficulty": 1,
-        "elevation": 2
+        "passable": true
     },
     {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
         "size": 50,
-        "passable": true,
         "difficulty": 1,
-        "elevation": 1
+        "elevation": 0,
+        "passable": true
     },
     {
-        "0": "e",
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "elevation": 3,
-        "difficulty": 1,
-        "passable": true
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
-        "size": 50,
-        "passable": true,
-        "difficulty": 1,
-        "elevation": 0
-    },
-    {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
     },
     {
-        "0": "e",
         "size": 50,
         "passable": false,
         "difficulty": 1,
         "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "elevation": -2,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": false
+    },
+    {
+        "size": 50,
+        "elevation": -3,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -2,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": -3,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -3,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "elevation": -3,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -3,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -3,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -3,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -3,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "elevation": -4,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -4,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "elevation": -4,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -4,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "elevation": -4,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -4,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -4,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -4,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "passable": false,
+        "difficulty": 1,
+        "elevation": 0
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "elevation": -5,
+        "difficulty": 1,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
+    },
+    {
+        "size": 50,
+        "difficulty": 1,
+        "elevation": 0,
+        "passable": true
     }
 ]

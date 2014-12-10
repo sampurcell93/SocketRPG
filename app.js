@@ -25,14 +25,6 @@ io.on('connection', function (socket) {
 
 app.set('port', process.env.PORT || 7076);
 
-app.use(function (req, res, next) {
-        // res.setHeader('Access-Control-Allow-Origin', "http://"+req.headers.host);
-        res.setHeader('Access-Control-Allow-Origin', "*");
-        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-        next();
-    }
-);
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

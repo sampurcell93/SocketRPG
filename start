@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function run {
+	nodemon bin/www --ignore public;
+}
+
+run
+exit
+

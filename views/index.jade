@@ -1,14 +1,50 @@
 extends layout
 
 block content
-  #wrapper 
-    #tile-editor        
-        .save-map Save All Tiles
-    canvas#game-canvas(tabindex='0', width='950', height='700')
-    ul.mapmaker-grid
-    div.game-console
-        .button.js-toggle Toggle
-        ol
+    #wrapper 
+        ol.horiz-letters
+            li 0
+            li 1
+            li 2
+            li 3
+            li 4
+            li 5
+            li 6
+            li 7
+            li 8
+            li 9
+            li 10
+            li 11
+            li 12
+            li 13
+            li 14
+            li 15
+            li 16
+            li 17
+            li 18
+            li 19
+        ol.vert-numbers
+            li 0
+            li 1
+            li 2
+            li 3
+            li 4
+            li 5
+            li 6
+            li 7
+            li 8
+            li 9
+            li 10
+            li 11
+            li 12
+            li 13
+        #tile-editor        
+            .save-map Save All Tiles
+        canvas#game-canvas(tabindex='0', width='950', height='700')
+        ul.mapmaker-grid
+        div.game-console
+            .button.js-toggle Toggle
+            ol
     script(type='text/template')#grid-item
         span.difficulty  <%= difficulty %>
         span.elevation  <%= elevation %>
@@ -31,3 +67,4 @@ block content
         | Actor passable?
         <input class='val-passable' type='text' placeholder='Pass?'/>
         button.js-save-map Save <%= numtiles %> Tiles
+

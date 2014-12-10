@@ -14,6 +14,33 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
     # "global" holding info about the current stahe
     stageInfo = null
 
+    getPathOptions = ->
+        # Default path options for BFS
+        path_options = # Compute diagonals as a distance-1 move?
+            diagonal: false
+            # Do not designate squares occupied by NPCs as un-enterable
+            ignoreNPCs: false
+            # Do not designate squares occupied by PCs as un-enterable
+            ignorePCs: false
+            # Only designate occupied squares as valid.
+            ignoreEmpty: false
+            # Should difficult terrain factor into distance?
+            ignoreDifficult: false
+            # Should the cumulative path be stored in each node that is traversed?
+            storePath: true
+            # Should the acceptable directions of a square
+            ignoreDeltas: false
+            # How long should we search for?
+            range: 6
+            # The context to call the handler in
+            handlerContext: @
+            # How much elevation is acceptable?
+            jump: 2
+            # truth test - executes after all other checks (which can be ignored by modifying other opts)
+            # If it returns true, the square is returned regardless - if false, the square is not counter.
+            truth_test: (target) -> true
+
+
     class Tile extends Backbone.Model
         defaults: ->
             return {
@@ -24,9 +51,98 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
             }
         initialize: ->
             @occupiedBy = null
-        isPassableByActor: (actor) -> @get("passable")
-        occupyWith: (obj) -> @occupiedBy = obj;
+        getCellIndices: ->
+            if @_rc and @_cc
+                return {rowCell: @_rc, colCell: @_cc}
+
+            if @collection?
+                index = @collection.indexOf @
+                width = @collection.width
+                @_rc = rowCell = Math.floor(index / width)
+                @_cc = colCell = index % width
+                return {rowCell: rowCell, colCell: colCell}
+            return null
+        isPassableByActor: (actor, fromTile) -> 
+            fromTile = fromTile or actor.currentTile
+            return false if @get("passable") is false
+            height = @get "elevation"
+            jump = actor.get "jmp"
+            currentHeight = fromTile.get("elevation")
+            return false if (currentHeight + jump < height) 
+            return false if (currentHeight - jump > height)
+            return false if @isOccupied()
+            true
+        occupyWith: (obj) -> 
+            @occupiedBy = obj;
+        deOccupy: -> @occupyWith null
         isOccupied: -> !_.isNull(@occupiedBy)
+        getPixelValues: -> {x: @view.shape.x, y: @view.shape.y}
+        # Gets the adjacency list for a tile. Pass in false
+        # to ignore diagonal adjacency
+        getAdjacencyList: (diagonal = true) ->
+            # if @AL? then return @AL
+            if diagonal is true then inc = 1 else inc = 2
+            {rowCell, colCell} = @getCellIndices();
+            adjacencyList = []
+            c = @collection
+            for i in [-1..1]
+                if i is 0 then continue
+                a = c.getTile(rowCell + i, colCell)
+                adjacencyList.push(a) if a?
+                a = c.getTile(rowCell, colCell + i)
+                adjacencyList.push(a) if a?
+                if diagonal is true
+                    a = c.getTile(rowCell + i, colCell + -i)
+                    adjacencyList.push(a) if a?
+                    a = c.getTile(rowCell + -i, colCell + i)
+                    adjacencyList.push(a) if a?
+            adjacencyList
+        # Pass in a row and a col to get the euclidean distance from this cell
+        # If diagonal is true, it will count each diagonal as only one
+        getDistanceFrom: (row, col, shortDiagonal = false) ->
+            {rowCell, colCell} = @getCellIndices()
+            xDist = Math.abs colCell - col
+            yDist = Math.abs rowCell - row
+            dist = yDist + xDist
+            if !shortDiagonal
+                return dist
+            else 
+                return dist - Math.min(yDist, xDist);
+
+        # Run a BFS from a root node, defaults to actor's location
+        BFS: (lookingFor = (-> true), options = {}) ->
+            maxDistance = 0;
+            start = @
+            options = _.extend(getPathOptions(), options)
+            {rowCell, colCell} = start.getCellIndices()
+            queue = [start]
+            discoveryTable = {} 
+            discoveryTable[start.cid] = true
+            start.distanceFromRoot = 0
+            # The set of tiles that will be returned, in order of ascending distance from root
+            finalSet = []
+            while queue.length 
+                tile = queue.shift()
+                if (tile isnt start)
+                    finalSet.push(tile)
+                if options.returnOnFirst is true then break;
+                _.each tile.getAdjacencyList(options.diagonal), (t) ->
+                    dist = tile.distanceFromRoot + t.get("difficulty")
+                    r = t.getCellIndices()
+                    c = tile.getCellIndices()
+                    if !_.has(discoveryTable, t.cid) and dist  <= options.range
+                        if lookingFor(t, tile) is true
+                            console.log("progenitor is at " + c.rowCell + ", " + c.colCell + " with dist " + tile.distanceFromRoot)
+                            console.log(dist, r.rowCell, r.colCell)
+                            t.distanceFromRoot = dist
+                            t.progenitor = tile
+                            discoveryTable[t.cid] = true;
+                            queue.push(t)
+
+                        
+            console.log(finalSet.length)
+            return finalSet
+
 
 
     class Tiles extends Backbone.Collection
@@ -34,14 +150,24 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
         initialize: () ->
             @width = _boardWidth
             @height= _boardHeight
-        getTile: (row, col) ->  @at @width * row + col
+        getTile: (row, col) ->  
+            if row > @height then return null
+            else if col > @width then return null
+            return @at @width * row + col
 
 
     class TileGridItem extends createjs.Bitmap
-        constructor: ->
+        constructor: (tile) ->
             super
-        initialize: ->
-            @model.view = @
+            tile.view = @
+            @model = tile
+            _.extend @, Backbone.Events
+            @listenTo @model, "highlight", @drawHighlight
+        drawHighlight: (color) ->
+            size = @model.get("size")
+            @shape.alpha = .5
+            @shape.graphics.clear().beginFill(color).drawRect(0, 0, size, size).endFill();
+            console.log color
         bindHoverEvents: ->
             size = @model.get("size")
             hit = new createjs.Shape()
@@ -59,7 +185,7 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
             @shape.y = y
             # Render on canvas here
             @bindHoverEvents()
-            objectrenderer.addObject @shape
+            objectrenderer.addObject @shape, 0
             @shape
 
 
@@ -69,48 +195,66 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
         renderTile: (tile) ->
             index = tile.collection.indexOf tile
             width = @collection.width
-            tileRender = new TileGridItem()
-            tileRender.model = tile
+            tileRender = new TileGridItem(tile)
             tileRender.render(index % width, Math.floor(index / @collection.width))
         render: ->
             @collection.each @renderTile
 
-    _activeTileSet = null
-
     initializeEmptyTileSet = ->
-        _activeTileSet = new Tiles()
-        _activeTileSet.add new Tile for i in [0...(_boardHeight*_boardWidth)]
-        _activeTileSet
+        tiles = new Tiles()
+        tiles.add new Tile for i in [0...(_boardHeight*_boardWidth)]
+        tiles
 
-    do initializeEmptyTileSet
+    _activeTileSet = do initializeEmptyTileSet
 
     t = new TileGrid({collection: _activeTileSet})
     t.render()
+
+    setActiveTiles = (tiles) ->  _activeTileSet = tiles
 
     # Convert pixels to their tile_dimension based cell index
     pixelToCell = (pixel) -> Math.ceil(pixel / config.tile_dimension)
     # Vice versa
     cellToPixel = (cell) -> cell * tile_dimension
     # Check cache for existence of tiles and set new tiles
-    setActiveTiles = (identifier, nameString, blockIndex) ->
+    getTilesByIdentifier = (identifier, nameString, blockIndex, done=(->)) ->
+        tiles = initializeEmptyTileSet()
         if (!_.has(tileCache, identifier)) 
-            promise = $.getJSON identifier, {}, (tiles) -> 
-                tiles = new Tiles(tiles, {parse: true})
+            promise = $.getJSON identifier, {}, (response) -> 
+                tiles = new Tiles(response, {parse: true})
                 tileCache[identifier] = tiles
-                _activeTileSet = tiles
             promise.error ->
                 console.error "fucked up loading tiles from #{identifier}"
-                _activeTileSet = initializeEmptyTileSet()
             .always ->
-                _activeTileSet.nameString = nameString
-                _activeTileSet.blockIndex = blockIndex
+                tiles.nameString = nameString
+                tiles.blockIndex = blockIndex
+                done(tiles)
         else 
-            _activeTileSet = tileCache[identifier]
-            _activeTileSet.nameString = nameString
-            _activeTileSet.blockIndex = blockIndex
+            console.log("in cache")
+            tiles = tileCache[identifier]
+            tiles.nameString = nameString
+            tiles.blockIndex = blockIndex
+            done(tiles)
+            tiles
 
-    # Loads a map
-    dispatcher.on "load:map", (name, blockRow, blockCol, type='jpg') ->
+    # Loads a tileset based on its setID string and its 2d index within the larger set.
+    # For example, the "Home" set has a tile blocks from 0,0 to 3,3.
+    # When we've finished the AJAX retrieval call, do something with the tiles
+    dispatcher.on "load:tiles", (name, blockRow, blockCol, done = (->)) ->
+        stage = stageInfo.stages[name]
+        width = stage.width
+        height = stage.height
+        index = width * blockRow + blockCol
+        path = "#{maproot}#{name}/#{index}."
+        getTilesByIdentifier("#{path}tile", name, index, done)
+
+
+    # Loads a map background and renders it via objectrenderer, and loads the corresponding tiles
+    # unless the done function parameter is set explicitly to false
+    dispatcher.on "load:map", (name, blockRow, blockCol, done = null, type='jpg') ->
+        if (!done?) 
+            done = (tiles) ->
+                setActiveTiles(tiles)
         stage = stageInfo.stages[name]
         width = stage.width
         height = stage.height
@@ -118,17 +262,20 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
         objectrenderer.removeBackground()
         path = "#{maproot}#{name}/#{index}."
         objectrenderer.addBackground("#{path}#{type}")
-        setActiveTiles("#{path}tile", name, index)
-        dispatcher.dispatch "toggle:mapmaker"
+        getTilesByIdentifier("#{path}tile", name, index, done) unless done is false
 
 
     return {
+        renderTiles: ->
+            t.collection = _activeTileSet
+            t.render()
         getMapRoot: -> maproot
         Tile: Tile
         setStageInfo: (stageInfo_) -> stageInfo = stageInfo_
         getActiveTiles: -> _activeTileSet
-        setActiveTiles: (identifier) -> 
-            setActiveTiles identifier
+        setActiveTiles: (tiles) -> setActiveTiles tiles
+        getTilesByIdentifier: (identifier) -> 
+            getTilesByIdentifier identifier
         pixelToCell: (pixel) -> pixelToCell pixel
         cellToPixel: (pixel) -> cellToPixel cell
         getBoardWidthCells: -> 

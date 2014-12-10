@@ -26,13 +26,16 @@ body {
 #wrapper {
     width: $mapwidth;
     position: relative;
-    margin: 0 auto;
+    margin: 0;
+    margin-left: 30px;
+    padding: 0;
 }
 
 canvas#game-canvas {
     display: block;
     outline: 1px solid #000;
-    margin: 40px 0 0 0;
+    margin: 10px 0 0 0;
+    padding: 0;
 }
 
 .game-console {
@@ -140,4 +143,38 @@ canvas#game-canvas {
     background: #fff;
     padding: 20px;
     margin: 0 5%;
+}
+
+ol {    
+    color: red;
+    z-index: 99999;
+    
+    &.horiz-letters { 
+        position: fixed;
+        display: block;
+        width: $mapwidth;
+        height: 30px;
+        color: red;
+
+        li {
+            display: inline-block;
+            width: 50px;
+            margin: 0px;
+            padding: 0;
+            text-align: center;
+        }
+    }
+    &.vert-numbers {
+        position: fixed;
+        left: 50%;
+        margin-left: -450px;
+        height: 700px;
+        top: 10px;
+        width: 30px;
+
+        li {
+            line-height: 50px;
+            display: block;
+        }
+    }
 }

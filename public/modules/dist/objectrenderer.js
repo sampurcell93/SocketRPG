@@ -1,7 +1,8 @@
 (function() {
   define(function() {
-    var $canvas, canvas, stage, _ticker;
+    var $canvas, addObject, canvas, dispatcher, removeBackground, stage, _ticker;
     canvas = document.getElementById("game-canvas");
+    dispatcher = hub.dispatcher;
     $canvas = $(canvas);
     stage = new createjs.Stage(canvas);
     stage.enableMouseOver(10);
@@ -17,33 +18,56 @@
         return console.error(_error);
       }
     });
-    hub.dispatcher.on("show:stage", function() {
-      return console.log(stage);
+    dispatcher.on("remove:marker", function(marker) {
+      return stage.removeChild(marker);
     });
+    dispatcher.on("add:marker", function(marker, at) {
+      return addObject(marker, at);
+    });
+    dispatcher.on("remove:background", function(marker) {
+      return removeBackground();
+    });
+    addObject = function(o, at) {
+      if ((stage.children[0] != null) && stage.children[0].background === true && at < 1) {
+        at = 1;
+      }
+      if (_.isUndefined(at)) {
+        return stage.addChildAt(o, at);
+      } else {
+        return stage.addChild(o);
+      }
+    };
+    removeBackground = function() {
+      var hasBackground;
+      hasBackground = stage.getChildAt(0).background;
+      if (hasBackground === true) {
+        stage.removeChildAt(0);
+        return stage.getChildAt(0).background = false;
+      }
+    };
     return {
       getTicker: function() {
         return _ticker;
       },
-      addBackground: function(url) {
+      addBackground: function(url, x, y) {
         var child;
+        if (x == null) {
+          x = 0;
+        }
+        if (y == null) {
+          y = 0;
+        }
         child = new createjs.Bitmap(url);
+        child.x = x;
+        child.y = y;
         child.background = true;
         return stage.addChildAt(child, 0);
       },
       removeBackground: function() {
-        if (stage.getChildAt(0).background === true) {
-          return stage.removeChildAt(0);
-        }
+        return removeBackground();
       },
       addObject: function(o, at) {
-        if ((stage.children[0] != null) && stage.children[0].background === true && at < 1) {
-          at = 1;
-        }
-        if (_.isUndefined(at)) {
-          return stage.addChildAt(o, at);
-        } else {
-          return stage.addChild(o);
-        }
+        return addObject.apply(this, arguments);
       }
     };
   });

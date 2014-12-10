@@ -50,6 +50,8 @@
               return actor.moveLeft();
             case keys["MAPMAKER"]:
               return dispatcher.dispatch("toggle:mapmaker");
+            case keys['BATTLE']:
+              return dispatcher.dispatch("start:battle");
           }
         }
       }
