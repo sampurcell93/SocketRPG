@@ -213,7 +213,7 @@
     grid = new EditableGrid();
     return dispatcher.on("toggle:mapmaker", function() {
       var active_map;
-      active_map = tiler.getActiveTiles();
+      active_map = tiler.getActiveTiles().tiles;
       console.log(active_map);
       grid.collection = active_map;
       grid.render();

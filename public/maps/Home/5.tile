@@ -1009,9 +1009,9 @@
     },
     {
         "size": 50,
-        "passable": false,
+        "passable": true,
         "difficulty": 1,
-        "elevation": 0
+        "elevation": -5
     },
     {
         "size": 50,
@@ -1111,9 +1111,9 @@
     },
     {
         "size": 50,
-        "passable": false,
+        "passable": true,
         "difficulty": 1,
-        "elevation": 0
+        "elevation": -5
     },
     {
         "size": 50,

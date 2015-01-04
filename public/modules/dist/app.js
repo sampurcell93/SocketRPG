@@ -25,31 +25,39 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jquer
     function($, _, Backbone, Marionette, easel, hub, jqui, io) {
         // User-made modules, in the context of global dependencies
         require(['tiler', 'actor', 'objectrenderer', 'keymapping', 'console', 
-            'modifiers', 'items', 'users', 'assetloader', 'mapmaker', 'mapselector'], 
+            'modifiers', 'items', 'users', 'assetloader', 'mapmaker'], 
             function(tiler, actors, objectrenderer, 
-                keymapping, emitter, modifiers, items, users, assetloader, mapmaker, mapselector) {
+                keymapping, emitter, modifiers, items, users, assetloader, mapmaker) {
 
                 function initializeGame() {
-                    
-                    hub.dispatcher.dispatch("load:map", "Home", 0,0, function(tiles) {
-                        tiler.setActiveTiles(tiles);
-                        tiler.renderTiles()
+                    hub.dispatcher.dispatch("load:map", "Home", 0,0, function(block) {
+                        block.render()
+                        objectrenderer.addObject(block);
                         spawner = actors.getSpawner()
                         actor = spawner.spawn()
-                        actor2 = spawner.spawn()
-                        objectrenderer.addObject(actor.marker, 0)
+                        // actor2 = spawner.spawn()
+                        actor3 = spawner.spawn()
+                        actor4 = spawner.spawn()
+                        // actor5 = spawner.spawn()
+                        block.addChild(actor.marker)
+                        actor.setCurrentTile(block.tiles.getTile(9,14), true)
                         actors.setCurrentActor(actor);
-                        actor.setCurrentTile(tiles.getTile(11,9), true)
-                        actor2.setCurrentTile(tiles.getTile(13,10), true)
-                        objectrenderer.addObject(actor2.marker, 0)
+                        // actor2.setCurrentTile(block.tiles.getTile(13,10), true)
+                        actor3.setCurrentTile(block.tiles.getTile(12,10), true)
+                        actor4.setCurrentTile(block.tiles.getTile(3,5), true)
+                        // actor5.setCurrentTile(block.tiles.getTile(4,11), true)
+                        // block.addChild(actor2.marker)
+                        block.addChild(actor3.marker)
+                        block.addChild(actor4.marker)
+                        // block.addChild(actor5.marker)
                         spawnerView = actors.getSpawnerView()
-                        objectrenderer.addObject(spawnerView.marker, 0)    
+                        block.addChild(spawnerView.marker)    
+                    //     debugger
                         cells = actor.currentTile.BFS(function(tile, progenitor) {
-                            console.log(tile.get("elevation"), tile.isPassableByActor(actor, progenitor))
                             return tile.isOccupied()
                         }, function(tile, progenitor) {
                             return tile.isPassableByActor(actor, progenitor)
-                        }, {diagonal: false})
+                        }, {diagonal: true, range: 11})
                         _.each(cells, function(cell) {
                             cell.trigger("highlight", "red")
                         });
@@ -60,7 +68,6 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jquer
                 hub.dispatcher.on("loaded:assets", initializeGame)
                 var socket = io.connect('http://localhost');
                 socket.on('news', function (data) {
-                    console.log(data);
                     socket.emit('my other event', { my: 'data' });
                 });
             }

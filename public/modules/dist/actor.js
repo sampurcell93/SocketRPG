@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["module", "tiler"], function(module, tiler) {
+  define(["module", "tiler", "items"], function(module, tiler, items) {
     var Actor, Spawner, SpawnerView, dispatcher, getNewChunkCoords, isExitingBlockBounds, tile_dimension, _currentActor;
     dispatcher = hub.dispatcher;
     tile_dimension = tiler.getTileDimension();
@@ -53,6 +53,7 @@
           HP: 100,
           maxHP: 100,
           init: 1,
+          inventory: items.getDefaultInventory(),
           jmp: 1,
           level: 1,
           name: "Actor",
@@ -93,9 +94,10 @@
             return function(activeTiles) {
               var targetTile, _ref;
               _ref = getNewChunkCoords.call(_this, dx, dy), x = _ref.x, y = _ref.y;
-              targetTile = activeTiles.getTile(tiler.pixelToCell(y), tiler.pixelToCell(x));
+              targetTile = activeTiles.tiles.getTile(tiler.pixelToCell(y), tiler.pixelToCell(x));
               if (targetTile && targetTile.isPassableByActor(actor)) {
                 tiler.setActiveTiles(activeTiles);
+                activeTiles.addChild(_this.marker);
                 _this.set("currentBlockRow", newBlockRow);
                 _this.set("currentBlockCol", newBlockCol);
                 dispatcher.dispatch("load:map", currentStageName, newBlockRow, newBlockCol, false);
@@ -110,7 +112,7 @@
           })(this));
         } else {
           this.moving = true;
-          targetTile = tiler.getActiveTiles().getTile(tiler.pixelToCell(y), tiler.pixelToCell(x));
+          targetTile = tiler.getActiveTiles().tiles.getTile(tiler.pixelToCell(y), tiler.pixelToCell(x));
           if (targetTile && targetTile.isPassableByActor(actor)) {
             this.setCurrentTile(targetTile);
             this.marker.x = x;
@@ -310,7 +312,7 @@
         this.marker.y = y;
         col = tiler.pixelToCell(x);
         row = tiler.pixelToCell(y);
-        target = tiler.getActiveTiles().getTile(row, col);
+        target = tiler.getActiveTiles().tiles.getTile(row, col);
         target.occupyWith(this);
         this.currentTile = target;
         console.log(this.currentTile);

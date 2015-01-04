@@ -97,8 +97,8 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
                     a = c.getTile(rowCell + -i, colCell + i)
                     adjacencyList.push(a) if a?
             _.sortBy adjacencyList, (v) -> v.get("difficulty")
-        # Pass in a row and a col to get the euclidean distance from this cell
-        # If diagonal is true, it will count each diagonal as only one
+        # Pass in a row and a col to get the unit distance from this cell
+        # If diagonal is true, it will travel diagonally too
         getDistanceFrom: (row, col, shortDiagonal = false) ->
             {rowCell, colCell} = @getCellIndices()
             xDist = Math.abs colCell - col
@@ -121,12 +121,14 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
             options = _.extend(getPathOptions(), options)
             {rowCell, colCell} = start.getCellIndices()
             queue = [start]
+            # Lookup table to see if discovered
             discoveryTable = {} 
+            # Lookup table for the tile that led us to each other tile, indexed by cid
             progenitors = {}
+            # The set of tiles that will be returned, in order of ascending distance from root
             finalSet = []
             discoveryTable[start.cid] = true
 
-            # The set of tiles that will be returned, in order of ascending distance from root
             while queue.length 
                 tile = queue.shift()
                 if (tile isnt start and lookingFor(tile, progenitors[tile.cid]) is true)
@@ -187,7 +189,6 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
             @shape.y = y
             # Render on canvas here
             @bindHoverEvents()
-            objectrenderer.addObject @shape, 0
             @shape
 
 
@@ -198,21 +199,32 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
             index = tile.collection.indexOf tile
             width = @collection.width
             tileRender = new TileGridItem(tile)
-            tileRender.render(index % width, Math.floor(index / @collection.width))
+            shape = tileRender.render(index % width, Math.floor(index / @collection.width))
+            console.log(@container?)
+            @container.addChild shape
         render: ->
             @collection.each @renderTile
 
-    initializeEmptyTileSet = ->
+    renderBlock = (x= 0, y = 0) ->
+        if !@rendered
+            @gridView.render()
+            @rendered = true
+        bg = new createjs.Bitmap(@background)
+        bg.x = x
+        bg.y = y
+        bg.background = true
+        @addChildAt bg, 0
+
+    createEmptyBlock = ->
+        container = new createjs.Container()
+        container.render = (x, y) ->
+            renderBlock.apply(container, arguments);
         tiles = new Tiles()
-        tiles.add new Tile for i in [0...(_boardHeight*_boardWidth)]
-        tiles
+        container.gridView = new TileGrid({collection: tiles})
+        container.gridView.container = container
+        container
 
-    _activeTileSet = do initializeEmptyTileSet
-
-    t = new TileGrid({collection: _activeTileSet})
-    t.render()
-
-    setActiveTiles = (tiles) ->  _activeTileSet = tiles
+    _activeTileSet = null
 
     # Convert pixels to their tile_dimension based cell index
     pixelToCell = (pixel) -> Math.ceil(pixel / config.tile_dimension)
@@ -220,24 +232,33 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
     cellToPixel = (cell) -> cell * tile_dimension
     # Check cache for existence of tiles and set new tiles
     getTilesByIdentifier = (identifier, nameString, blockIndex, done=(->)) ->
-        tiles = initializeEmptyTileSet()
+        container = do createEmptyBlock
+        container.background = "#{maproot}#{nameString}/#{blockIndex}.jpg"
         if (!_.has(tileCache, identifier)) 
             promise = $.getJSON identifier, {}, (response) -> 
                 tiles = new Tiles(response, {parse: true})
-                tileCache[identifier] = tiles
+                container.tiles = tiles;
+                container.gridView.collection = tiles;
+                tileCache[identifier] = container
             promise.error ->
                 console.error "fucked up loading tiles from #{identifier}"
             .always ->
-                tiles.nameString = nameString
-                tiles.blockIndex = blockIndex
-                done(tiles)
+                container.tiles.nameString = nameString
+                container.tiles.blockIndex = blockIndex
+                _activeTileSet = container
+                done(container)
         else 
-            console.log("in cache")
-            tiles = tileCache[identifier]
-            tiles.nameString = nameString
-            tiles.blockIndex = blockIndex
-            done(tiles)
-            tiles
+            container = tileCache[identifier]
+            container.tiles.nameString = nameString
+            container.tiles.blockIndex = blockIndex
+            _activeTileSet = container
+            done(container)
+
+    setActiveTiles = (tiles) ->
+        objectrenderer.removeChild null, 0
+        _activeTileSet = tiles
+        renderBlock.apply(tiles);
+        objectrenderer.addObject tiles
 
     # Loads a tileset based on its setID string and its 2d index within the larger set.
     # For example, the "Home" set has a tile blocks from 0,0 to 3,3.
@@ -261,21 +282,15 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
         width = stage.width
         height = stage.height
         index = width * blockRow + blockCol
-        objectrenderer.removeBackground()
         path = "#{maproot}#{name}/#{index}."
-        objectrenderer.addBackground("#{path}#{type}")
         getTilesByIdentifier("#{path}tile", name, index, done) unless done is false
 
-
     return {
-        renderTiles: ->
-            t.collection = _activeTileSet
-            t.render()
+        getActiveTiles: -> _activeTileSet
+        setActiveTiles: (tiles) -> setActiveTiles tiles
         getMapRoot: -> maproot
         Tile: Tile
         setStageInfo: (stageInfo_) -> stageInfo = stageInfo_
-        getActiveTiles: -> _activeTileSet
-        setActiveTiles: (tiles) -> setActiveTiles tiles
         getTilesByIdentifier: (identifier) -> 
             getTilesByIdentifier identifier
         pixelToCell: (pixel) -> pixelToCell pixel

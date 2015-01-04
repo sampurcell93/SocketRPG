@@ -1698,7 +1698,7 @@
         "size": 50,
         "elevation": 3,
         "difficulty": 1,
-        "passable": true
+        "passable": false
     },
     {
         "0": "e",

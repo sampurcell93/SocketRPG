@@ -4,6 +4,8 @@ html
     title= title
     link(rel='stylesheet', href='stylesheets/screen.css')
     link(rel='stylesheet', href='modules/dist/bower_components/jqueryui/themes/ui-lightness/jquery-ui.min.css')
+    script.
+        var user  = !{JSON.stringify(user).replace(/<\//g, "<\\/")}
   body
     block content
     script(src='modules/dist/require.min.js', data-main='modules/dist/app')

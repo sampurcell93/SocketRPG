@@ -33,7 +33,7 @@ define ->
             stage.addChild o
 
     removeBackground = ->
-        hasBackground = stage.getChildAt(0).background
+        hasBackground = stage.getChildAt(0)?.background
         if hasBackground is true
             stage.removeChildAt(0) 
             stage.getChildAt(0).background = false
@@ -45,10 +45,13 @@ define ->
             child.x = x
             child.y = y
             child.background = true
-            stage.addChildAt child, 0
+            tileset = stage.children[0]
+            # if tileset? 
+                # tileset.addChildAt child, 0
         removeBackground: -> do removeBackground
-
-        addObject: (o, at) ->
+        removeChild: (child, at = 0) ->
+            stage.removeChildAt at
+        addObject: (o, at) ->   
             addObject.apply @, arguments
 
     }

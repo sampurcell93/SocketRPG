@@ -1,0 +1,58 @@
+@import "compass/reset";
+@import "compass/css3";
+
+$height: 150px;
+$width : 400px;
+$bg : #1C262F; 
+$darkbg: #15181c;
+$light: #232E3B;
+$text: #979B9F;
+
+* {
+    @include box-sizing(border-box);
+}
+
+body {
+    background: $darkbg;
+    position: relative;
+}
+
+.wrapper {
+    @include border-radius(3px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: $width;
+    height: $height;
+    margin-left: -$width/2;
+    margin-top: -$height/2;
+    display: block;
+    padding: 1em;
+    background: $bg;
+}
+
+input[type='text'] {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $light;
+    color: $text;
+    line-height: 1.6;
+    font-size: 1.4em;
+    padding: 3px 5px;
+}
+
+input[type='submit'] {
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: none;
+    color: $text;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

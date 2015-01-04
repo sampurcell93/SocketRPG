@@ -109,7 +109,7 @@ define ['tiler'], (tiler) ->
     grid = new EditableGrid()
 
     dispatcher.on "toggle:mapmaker", -> 
-        active_map = tiler.getActiveTiles() 
+        active_map = tiler.getActiveTiles().tiles
         console.log(active_map)
         grid.collection = active_map
         grid.render()

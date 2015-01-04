@@ -1,4 +1,4 @@
-define ["module", "tiler"], (module, tiler) ->
+define ["module", "tiler", "items"], (module, tiler, items) ->
 
     dispatcher = hub.dispatcher
     tile_dimension = tiler.getTileDimension()
@@ -39,7 +39,7 @@ define ["module", "tiler"], (module, tiler) ->
                 HP: 100
                 maxHP: 100
                 init: 1
-                # inventory: items.Inventory()
+                inventory: items.getDefaultInventory()
                 # modifiers: new ModifierCollection()
                 # statuses: new ModifierCollection()
                 # skills: cast.Skillset()
@@ -73,9 +73,10 @@ define ["module", "tiler"], (module, tiler) ->
                 newBlockCol = @get("currentBlockCol") + dx
                 dispatcher.dispatch "load:tiles", currentStageName, newBlockRow, newBlockCol, (activeTiles) =>
                     {x,y} = getNewChunkCoords.call(@, dx,dy)
-                    targetTile = activeTiles.getTile(tiler.pixelToCell(y), tiler.pixelToCell(x))
+                    targetTile = activeTiles.tiles.getTile(tiler.pixelToCell(y), tiler.pixelToCell(x))
                     if (targetTile and targetTile.isPassableByActor(actor))
                         tiler.setActiveTiles activeTiles
+                        activeTiles.addChild @marker
                         @set "currentBlockRow" , newBlockRow
                         @set "currentBlockCol" , newBlockCol
                         dispatcher.dispatch("load:map", currentStageName , newBlockRow, newBlockCol, false)
@@ -87,7 +88,7 @@ define ["module", "tiler"], (module, tiler) ->
                     @moving = false
             else 
                 @moving = true
-                targetTile = tiler.getActiveTiles().getTile(tiler.pixelToCell(y), tiler.pixelToCell(x))
+                targetTile = tiler.getActiveTiles().tiles.getTile(tiler.pixelToCell(y), tiler.pixelToCell(x))
                 if (targetTile and targetTile.isPassableByActor(actor))
                     @setCurrentTile targetTile
                     @marker.x = x
@@ -228,7 +229,7 @@ define ["module", "tiler"], (module, tiler) ->
             @marker.y = y
             col = tiler.pixelToCell(x)
             row = tiler.pixelToCell(y)
-            target = tiler.getActiveTiles().getTile row, col
+            target = tiler.getActiveTiles().tiles.getTile row, col
             target.occupyWith @
             @currentTile = target
             console.log(@currentTile)

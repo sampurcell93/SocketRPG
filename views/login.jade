@@ -1,0 +1,17 @@
+doctype
+html
+    head
+        title=title
+        link(rel='stylesheet', media='screen', href='stylesheets/login.css')
+        script.
+            var user  = !{JSON.stringify(user).replace(/<\//g, "<\\/")}
+    body
+        form(action='/login', method='POST').wrapper
+            input(type='text', name='username', placeholder='username')#username
+            input(type='text', name='password', placeholder='password')#password
+            input(type='submit', name='submitme', value='->')#submit-me 
+
+        script(src='modules/dist/bower_components/jquery/dist/jquery.js')
+        script(src='modules/dist/bower_components/underscore/underscore-min.js')
+        script(src='modules/dist/bower_components/backbone/backbone.js')
+        script(src='modules/dist/login.js')

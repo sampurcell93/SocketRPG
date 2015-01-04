@@ -1,6 +1,14 @@
 module.exports = (grunt) =>
 
 	grunt.initConfig
+		exec: 
+			start:
+            	cmd: "./start &"
+            	callback: (error, stdout, stderr) ->
+	                console.log('stdout: ' + stdout);
+	                console.log('stderr: ' + stderr);
+	                if error isnt null
+	                    console.log('exec error: ' + error);
 		# Works for now, but inefficient - compiles ALL coffee files each time one is saved
 		coffee:
 			dist:
@@ -48,6 +56,7 @@ module.exports = (grunt) =>
 	grunt.loadNpmTasks 'grunt-contrib-compass'
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
 	grunt.loadNpmTasks 'grunt-nodemon'
+	grunt.loadNpmTasks 'grunt-exec'
 
 	# grunt.registerTask 'server', (target) ->
 	# 	nodemon = grunt.util.spawn
@@ -55,5 +64,5 @@ module.exports = (grunt) =>
 	#         grunt: true
 	#         args: 'nodemon'
 
-	grunt.registerTask "default", ['watch']
+	grunt.registerTask "default", ['exec', 'watch']
 

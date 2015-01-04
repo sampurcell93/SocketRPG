@@ -3,7 +3,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   define(['module', 'objectrenderer'], function(module, objectrenderer) {
-    var Tile, TileGrid, TileGridItem, Tiles, cellToPixel, config, dispatcher, getPathOptions, getTilesByIdentifier, initializeEmptyTileSet, maproot, pixelToCell, setActiveTiles, stageInfo, t, tileCache, _activeTileSet, _boardHeight, _boardMargin, _boardWidth;
+    var Tile, TileGrid, TileGridItem, Tiles, cellToPixel, config, createEmptyBlock, dispatcher, getPathOptions, getTilesByIdentifier, maproot, pixelToCell, renderBlock, setActiveTiles, stageInfo, tileCache, _activeTileSet, _boardHeight, _boardMargin, _boardWidth;
     dispatcher = hub.dispatcher;
     config = module.config();
     _boardWidth = 19;
@@ -283,7 +283,6 @@
         this.shape.x = x;
         this.shape.y = y;
         this.bindHoverEvents();
-        objectrenderer.addObject(this.shape, 0);
         return this.shape;
       };
 
@@ -302,11 +301,13 @@
       };
 
       TileGrid.prototype.renderTile = function(tile) {
-        var index, tileRender, width;
+        var index, shape, tileRender, width;
         index = tile.collection.indexOf(tile);
         width = this.collection.width;
         tileRender = new TileGridItem(tile);
-        return tileRender.render(index % width, Math.floor(index / this.collection.width));
+        shape = tileRender.render(index % width, Math.floor(index / this.collection.width));
+        console.log(this.container != null);
+        return this.container.addChild(shape);
       };
 
       TileGrid.prototype.render = function() {
@@ -316,22 +317,38 @@
       return TileGrid;
 
     })(Backbone.View);
-    initializeEmptyTileSet = function() {
-      var i, tiles, _i, _ref;
-      tiles = new Tiles();
-      for (i = _i = 0, _ref = _boardHeight * _boardWidth; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
-        tiles.add(new Tile);
+    renderBlock = function(x, y) {
+      var bg;
+      if (x == null) {
+        x = 0;
       }
-      return tiles;
+      if (y == null) {
+        y = 0;
+      }
+      if (!this.rendered) {
+        this.gridView.render();
+        this.rendered = true;
+      }
+      bg = new createjs.Bitmap(this.background);
+      bg.x = x;
+      bg.y = y;
+      bg.background = true;
+      return this.addChildAt(bg, 0);
     };
-    _activeTileSet = initializeEmptyTileSet();
-    t = new TileGrid({
-      collection: _activeTileSet
-    });
-    t.render();
-    setActiveTiles = function(tiles) {
-      return _activeTileSet = tiles;
+    createEmptyBlock = function() {
+      var container, tiles;
+      container = new createjs.Container();
+      container.render = function(x, y) {
+        return renderBlock.apply(container, arguments);
+      };
+      tiles = new Tiles();
+      container.gridView = new TileGrid({
+        collection: tiles
+      });
+      container.gridView.container = container;
+      return container;
     };
+    _activeTileSet = null;
     pixelToCell = function(pixel) {
       return Math.ceil(pixel / config.tile_dimension);
     };
@@ -339,33 +356,43 @@
       return cell * tile_dimension;
     };
     getTilesByIdentifier = function(identifier, nameString, blockIndex, done) {
-      var promise, tiles;
+      var container, promise;
       if (done == null) {
         done = (function() {});
       }
-      tiles = initializeEmptyTileSet();
+      container = createEmptyBlock();
+      container.background = "" + maproot + nameString + "/" + blockIndex + ".jpg";
       if (!_.has(tileCache, identifier)) {
         promise = $.getJSON(identifier, {}, function(response) {
+          var tiles;
           tiles = new Tiles(response, {
             parse: true
           });
-          return tileCache[identifier] = tiles;
+          container.tiles = tiles;
+          container.gridView.collection = tiles;
+          return tileCache[identifier] = container;
         });
         return promise.error(function() {
           return console.error("fucked up loading tiles from " + identifier);
         }).always(function() {
-          tiles.nameString = nameString;
-          tiles.blockIndex = blockIndex;
-          return done(tiles);
+          container.tiles.nameString = nameString;
+          container.tiles.blockIndex = blockIndex;
+          _activeTileSet = container;
+          return done(container);
         });
       } else {
-        console.log("in cache");
-        tiles = tileCache[identifier];
-        tiles.nameString = nameString;
-        tiles.blockIndex = blockIndex;
-        done(tiles);
-        return tiles;
+        container = tileCache[identifier];
+        container.tiles.nameString = nameString;
+        container.tiles.blockIndex = blockIndex;
+        _activeTileSet = container;
+        return done(container);
       }
+    };
+    setActiveTiles = function(tiles) {
+      objectrenderer.removeChild(null, 0);
+      _activeTileSet = tiles;
+      renderBlock.apply(tiles);
+      return objectrenderer.addObject(tiles);
     };
     dispatcher.on("load:tiles", function(name, blockRow, blockCol, done) {
       var height, index, path, stage, width;
@@ -396,17 +423,17 @@
       width = stage.width;
       height = stage.height;
       index = width * blockRow + blockCol;
-      objectrenderer.removeBackground();
       path = "" + maproot + name + "/" + index + ".";
-      objectrenderer.addBackground("" + path + type);
       if (done !== false) {
         return getTilesByIdentifier("" + path + "tile", name, index, done);
       }
     });
     return {
-      renderTiles: function() {
-        t.collection = _activeTileSet;
-        return t.render();
+      getActiveTiles: function() {
+        return _activeTileSet;
+      },
+      setActiveTiles: function(tiles) {
+        return setActiveTiles(tiles);
       },
       getMapRoot: function() {
         return maproot;
@@ -414,12 +441,6 @@
       Tile: Tile,
       setStageInfo: function(stageInfo_) {
         return stageInfo = stageInfo_;
-      },
-      getActiveTiles: function() {
-        return _activeTileSet;
-      },
-      setActiveTiles: function(tiles) {
-        return setActiveTiles(tiles);
       },
       getTilesByIdentifier: function(identifier) {
         return getTilesByIdentifier(identifier);

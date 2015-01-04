@@ -38,8 +38,8 @@
       }
     };
     removeBackground = function() {
-      var hasBackground;
-      hasBackground = stage.getChildAt(0).background;
+      var hasBackground, _ref;
+      hasBackground = (_ref = stage.getChildAt(0)) != null ? _ref.background : void 0;
       if (hasBackground === true) {
         stage.removeChildAt(0);
         return stage.getChildAt(0).background = false;
@@ -50,7 +50,7 @@
         return _ticker;
       },
       addBackground: function(url, x, y) {
-        var child;
+        var child, tileset;
         if (x == null) {
           x = 0;
         }
@@ -61,10 +61,16 @@
         child.x = x;
         child.y = y;
         child.background = true;
-        return stage.addChildAt(child, 0);
+        return tileset = stage.children[0];
       },
       removeBackground: function() {
         return removeBackground();
+      },
+      removeChild: function(child, at) {
+        if (at == null) {
+          at = 0;
+        }
+        return stage.removeChildAt(at);
       },
       addObject: function(o, at) {
         return addObject.apply(this, arguments);
