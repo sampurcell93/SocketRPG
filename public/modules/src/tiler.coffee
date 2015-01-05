@@ -161,8 +161,8 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
 
 
     class TileGridItem extends createjs.Bitmap
-        constructor: (tile) ->
-            super
+        constructor: (url, tile) ->
+            super(url);
             tile.view = @
             @model = tile
             _.extend @, Backbone.Events
@@ -171,14 +171,13 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
             size = @model.get("size")
             @shape.alpha = .5
             @shape.graphics.clear().beginFill(color).drawRect(0, 0, size, size).endFill();
-            console.log color
         bindHoverEvents: ->
             size = @model.get("size")
             hit = new createjs.Shape()
             hit.graphics.beginFill("#000").beginStroke(1).drawRect(0, 0, size, size)
             @shape.hitArea = hit
             # @shape.addEventListener "mouseover", (=> console.log("clicked", @shape.x, @shape.y))
-        render: (x, y) ->
+        render: (x = 0, y = 0) ->
             size = @model.get("size")
             x *= size
             y *= size
@@ -189,7 +188,7 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
             @shape.y = y
             # Render on canvas here
             @bindHoverEvents()
-            @shape
+            @
 
 
     class TileGrid extends Backbone.View
@@ -198,10 +197,9 @@ define ['module', 'objectrenderer'], (module, objectrenderer) ->
         renderTile: (tile) ->
             index = tile.collection.indexOf tile
             width = @collection.width
-            tileRender = new TileGridItem(tile)
+            tileRender = new TileGridItem("images/torch.png", tile);
             shape = tileRender.render(index % width, Math.floor(index / @collection.width))
-            console.log(@container?)
-            @container.addChild shape
+            @container.addChild tileRender.shape
         render: ->
             @collection.each @renderTile
 

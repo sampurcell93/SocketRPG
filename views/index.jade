@@ -2,6 +2,7 @@ extends layout
 
 block content
     #wrapper 
+        ul#active-pools
         ol.horiz-letters
             li 0
             li 1
@@ -67,4 +68,7 @@ block content
         | Actor passable?
         <input class='val-passable' type='text' placeholder='Pass?'/>
         button.js-save-map Save <%= numtiles %> Tiles
+
+    script(type='text/template')#pool-list-item
+        | <%= capacity %>
 

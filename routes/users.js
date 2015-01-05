@@ -3,6 +3,31 @@ var express = require('express');
 var router = express.Router();
 var db = require("../lib/db");
 var conn = db.connection;
+var dispatcher = require("../lib/dispatcher");
+var io, connected = false;
+
+function bindUserSocketHandlers(socket) {
+    socket.on("add:online_player", function(playerID) {
+        console.log("setting user online in users.js. Player id = " + playerID);
+        conn.query("update users set is_online = true where id = " + playerID)
+    });
+    socket.on("remove:online_player", function(playerID) {
+        console.log("setting user online in users.js. Player id = " + playerID);
+        conn.query("update users set is_online = true where id = " + playerID)
+    })
+}
+
+dispatcher.on("ready:socket", function(socket) {
+    connected = true;
+    bindUserSocketHandlers(socket);
+    // console.log("connected")
+    // socket.emit('news', { hello: 'world' });
+    // socket.on('my other event', function (data) {
+    //     console.log(data);
+    // });
+
+})
+
 
 function createUser(username, password, done) {
     done = done || function() {}
@@ -11,9 +36,10 @@ function createUser(username, password, done) {
     var user = { 
         username: username,
         hash: hash_salt.hash,
-        salt: hash_salt.salt
+        salt: hash_salt.salt,
+        created_at: new Date()
     }
-    var q = conn.query("INSERT INTO users SET ?", user, function(err, result) {
+    conn.query("INSERT INTO users SET ?", user, function(err, result) {
         if (!err) {
             done(true, user);
         }

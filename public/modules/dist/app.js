@@ -21,8 +21,8 @@ require.config({
 
 
 // Global dependencies
-define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jqueryui', 'socket'], 
-    function($, _, Backbone, Marionette, easel, hub, jqui, io) {
+define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jqueryui', 'poolmanager', 'socket'], 
+    function($, _, Backbone, Marionette, easel, hub, jqui, pm, io) {
         // User-made modules, in the context of global dependencies
         require(['tiler', 'actor', 'objectrenderer', 'keymapping', 'console', 
             'modifiers', 'items', 'users', 'assetloader', 'mapmaker'], 
@@ -35,24 +35,11 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jquer
                         objectrenderer.addObject(block);
                         spawner = actors.getSpawner()
                         actor = spawner.spawn()
-                        // actor2 = spawner.spawn()
-                        actor3 = spawner.spawn()
-                        actor4 = spawner.spawn()
-                        // actor5 = spawner.spawn()
                         block.addChild(actor.marker)
                         actor.setCurrentTile(block.tiles.getTile(9,14), true)
                         actors.setCurrentActor(actor);
-                        // actor2.setCurrentTile(block.tiles.getTile(13,10), true)
-                        actor3.setCurrentTile(block.tiles.getTile(12,10), true)
-                        actor4.setCurrentTile(block.tiles.getTile(3,5), true)
-                        // actor5.setCurrentTile(block.tiles.getTile(4,11), true)
-                        // block.addChild(actor2.marker)
-                        block.addChild(actor3.marker)
-                        block.addChild(actor4.marker)
-                        // block.addChild(actor5.marker)
                         spawnerView = actors.getSpawnerView()
-                        block.addChild(spawnerView.marker)    
-                    //     debugger
+                        block.addChild(spawnerView.marker)  
                         cells = actor.currentTile.BFS(function(tile, progenitor) {
                             return tile.isOccupied()
                         }, function(tile, progenitor) {
@@ -61,15 +48,17 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jquer
                         _.each(cells, function(cell) {
                             cell.trigger("highlight", "red")
                         });
+                    });
+                    io.connect('http://localhost');
+                    var socket = io("/my_namespace");
+                    pm.addFreePlayer(window.__user.id);
+                    pm.getActivePools(function(pools){ 
+                       var poolsView = pm.getPoolsView(pools)
+                       poolsView.render()
                     })
-                    
                 }
 
                 hub.dispatcher.on("loaded:assets", initializeGame)
-                var socket = io.connect('http://localhost');
-                socket.on('news', function (data) {
-                    socket.emit('my other event', { my: 'data' });
-                });
             }
         )
     }

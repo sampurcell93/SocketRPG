@@ -315,7 +315,6 @@
         target = tiler.getActiveTiles().tiles.getTile(row, col);
         target.occupyWith(this);
         this.currentTile = target;
-        console.log(this.currentTile);
         this.marker.regY = 7;
         this.bindEvents();
         this;

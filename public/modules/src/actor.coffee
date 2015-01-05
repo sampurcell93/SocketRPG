@@ -232,7 +232,6 @@ define ["module", "tiler", "items"], (module, tiler, items) ->
             target = tiler.getActiveTiles().tiles.getTile row, col
             target.occupyWith @
             @currentTile = target
-            console.log(@currentTile)
             @marker.regY = 7
             @bindEvents()
             @

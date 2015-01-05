@@ -248,8 +248,8 @@
     TileGridItem = (function(_super) {
       __extends(TileGridItem, _super);
 
-      function TileGridItem(tile) {
-        TileGridItem.__super__.constructor.apply(this, arguments);
+      function TileGridItem(url, tile) {
+        TileGridItem.__super__.constructor.call(this, url);
         tile.view = this;
         this.model = tile;
         _.extend(this, Backbone.Events);
@@ -260,8 +260,7 @@
         var size;
         size = this.model.get("size");
         this.shape.alpha = .5;
-        this.shape.graphics.clear().beginFill(color).drawRect(0, 0, size, size).endFill();
-        return console.log(color);
+        return this.shape.graphics.clear().beginFill(color).drawRect(0, 0, size, size).endFill();
       };
 
       TileGridItem.prototype.bindHoverEvents = function() {
@@ -274,6 +273,12 @@
 
       TileGridItem.prototype.render = function(x, y) {
         var size;
+        if (x == null) {
+          x = 0;
+        }
+        if (y == null) {
+          y = 0;
+        }
         size = this.model.get("size");
         x *= size;
         y *= size;
@@ -283,7 +288,7 @@
         this.shape.x = x;
         this.shape.y = y;
         this.bindHoverEvents();
-        return this.shape;
+        return this;
       };
 
       return TileGridItem;
@@ -304,10 +309,9 @@
         var index, shape, tileRender, width;
         index = tile.collection.indexOf(tile);
         width = this.collection.width;
-        tileRender = new TileGridItem(tile);
+        tileRender = new TileGridItem("images/torch.png", tile);
         shape = tileRender.render(index % width, Math.floor(index / this.collection.width));
-        console.log(this.container != null);
-        return this.container.addChild(shape);
+        return this.container.addChild(tileRender.shape);
       };
 
       TileGrid.prototype.render = function() {
