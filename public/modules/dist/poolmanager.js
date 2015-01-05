@@ -11,6 +11,10 @@
         return Pool.__super__.constructor.apply(this, arguments);
       }
 
+      Pool.prototype.initialize = function() {
+        return this.socket = io("/" + (this.get("hashid")));
+      };
+
       Pool.prototype.parse = function(response) {
         response.created_at = new Date(response.created_at);
         return response;

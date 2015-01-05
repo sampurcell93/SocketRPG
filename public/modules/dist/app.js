@@ -50,7 +50,6 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jquer
                         });
                     });
                     io.connect('http://localhost');
-                    var socket = io("/my_namespace");
                     pm.addFreePlayer(window.__user.id);
                     pm.getActivePools(function(pools){ 
                        var poolsView = pm.getPoolsView(pools)

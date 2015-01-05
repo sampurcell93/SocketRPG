@@ -1,6 +1,7 @@
 define ["socket"], (io) ->
-
     class Pool extends Backbone.Model
+        initialize: ->
+            @socket = io("/#{@get("hashid")}");
         parse: (response) ->
             response.created_at = new Date(response.created_at);
             response;
