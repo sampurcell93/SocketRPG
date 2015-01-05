@@ -23,6 +23,7 @@ require.config({
 // Global dependencies
 define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jqueryui', 'poolmanager', 'socket'], 
     function($, _, Backbone, Marionette, easel, hub, jqui, pm, io) {
+        io.connect('http://localhost');
         // User-made modules, in the context of global dependencies
         require(['tiler', 'actor', 'objectrenderer', 'keymapping', 'console', 
             'modifiers', 'items', 'users', 'assetloader', 'mapmaker'], 
@@ -49,7 +50,6 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'easel', 'hub', 'jquer
                             cell.trigger("highlight", "red")
                         });
                     });
-                    io.connect('http://localhost');
                     pm.addFreePlayer(window.__user.id);
                     pm.getActivePools(function(pools){ 
                        var poolsView = pm.getPoolsView(pools)

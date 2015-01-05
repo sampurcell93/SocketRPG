@@ -12,6 +12,7 @@ var users = require('./routes/users');
 var mapping = require('./routes/maps');
 var pools = require('./routes/pools');
 var login = require('./routes/login');
+var methodOverride = require('method-override')
 var socketFactory = require("./lib/socketFactory");
 var dispatcher = require("./lib/dispatcher");
 
@@ -31,6 +32,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('shhhh, very secret'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('X-HTTP-Method-Override'))
 app.use(session({
   secret: 'keyboard cat',
   resave: true,
@@ -69,8 +71,6 @@ app.get('/logout', function(req, res){
     res.redirect('/');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
   });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-
-
 
 // error handlers
 

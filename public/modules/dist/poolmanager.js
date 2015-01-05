@@ -36,6 +36,10 @@
         return "/pools";
       };
 
+      Pools.prototype.initialize = function() {
+        return this.socket = io("/poolManager");
+      };
+
       return Pools;
 
     })(Backbone.Collection);
@@ -47,7 +51,6 @@
       if (activePools == null) {
         activePools = new Pools();
         return activePools.fetch().success(function() {
-          console.log(activePools);
           return done(activePools);
         });
       } else {

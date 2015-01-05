@@ -9,6 +9,8 @@ define ["socket"], (io) ->
     class Pools extends Backbone.Collection
         model: Pool
         url: -> "/pools"
+        initialize: ->
+            @socket = io("/poolManager");
 
     activePools = null;
 
@@ -16,7 +18,6 @@ define ["socket"], (io) ->
         if !activePools?
             activePools = new Pools()
             activePools.fetch().success ->
-                console.log(activePools)
                 done(activePools)
         else done(activePools)
 
