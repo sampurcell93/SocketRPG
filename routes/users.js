@@ -1,9 +1,11 @@
+var _ = require("underscore");
 var pass = require('../lib/pass');
 var express = require('express');
 var router = express.Router();
 var db = require("../lib/db");
 var conn = db.connection;
 var dispatcher = require("../lib/dispatcher");
+var user = require("../lib/user");
 var io, connected = false;
 
 function bindUserSocketHandlers(socket) {
@@ -28,27 +30,20 @@ dispatcher.on("ready:socket", function(socket) {
 
 })
 
-
-function createUser(username, password, done) {
-    done = done || function() {}
-    var hash_salt = pass.hash(password)
-      // store the salt & hash in the "db"
-    var user = { 
-        username: username,
-        hash: hash_salt.hash,
-        salt: hash_salt.salt,
-        created_at: new Date()
+router.get("/:id", function(req, res) {
+    var id = req.param("id");
+    if (_.isUndefined(id)) {
+        res.status(400).json({error: "You need to specify an ID."})
     }
-    conn.query("INSERT INTO users SET ?", user, function(err, result) {
-        if (!err) {
-            done(true, user);
-        }
-        else {
-            console.log(err);
-            done(false);
-        }
-    });
-}
+    else {
+        user.Get(4, {
+            success: function(guy) {
+                console.log("found", guy);
+            }
+        })
+    }
+
+})
 
 /* Add a new user */
 router.post('/', function(req, res) {
@@ -61,7 +56,7 @@ router.post('/', function(req, res) {
         res.redirect("back");
     }
     else {
-        createUser(username, password, function(complete, user) {
+        user.Create(username, password, function(complete, user) {
             if (complete) {
                 res.json(user)
             }

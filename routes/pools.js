@@ -12,7 +12,7 @@ router.get('/', pass.restrict, function(req, res) {
 });
 
 // Get pool by identifier and users in pool
-router.get("/:identifier")
+router.get("/:identifier", function(req, res) {})
 
 // Create a new pool with name
 // @param req.body.name {String}
@@ -31,6 +31,14 @@ router.post("/", pass.restrict, function(req, res) {
         });
     }
 });
+
+// Add a user to a pool
+router.put("/addUser/:userID/:poolID", function(req, res) {
+    var userID = req.param("userID");
+    var poolID = req.param("poolID");
+    pools.addPlayerToPool(userID, poolID)
+    res.end()
+})
 
 // Delete a pool with name
 // @param req.body.name {String}
