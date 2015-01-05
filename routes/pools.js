@@ -36,8 +36,29 @@ router.post("/", pass.restrict, function(req, res) {
 router.put("/addUser/:userID/:poolID", function(req, res) {
     var userID = req.param("userID");
     var poolID = req.param("poolID");
-    pools.addPlayerToPool(userID, poolID)
-    res.end()
+    pools.addPlayerToPool(userID, poolID, {
+        success: function() {
+            res.status(201).json({success: true});
+        },
+        failure: function(err, u) {
+            res.status(500).json(err);
+        }
+    });
+});
+
+// Remove a user from a pool
+router.delete("/removeUser/:userID/:poolID", function(req, res) {
+    var userID = req.param("userID");
+    var poolID = req.param("poolID");
+    pools.removePlayerFromPool(userID, poolID, {
+        success: function() {
+            res.status(201).json({success: true});
+        },
+        failure: function(err, u) {
+            res.status(500).json(err);
+        }
+    })
+
 })
 
 // Delete a pool with name
